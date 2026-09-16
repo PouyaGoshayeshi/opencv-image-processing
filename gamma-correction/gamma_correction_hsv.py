@@ -23,7 +23,7 @@ v_final = np.round(v_scaled * 255).astype(np.uint8)
 # ترکیب کانال‌ها و بازگشت به BGR
 hsv_final = cv2.merge([h.astype(np.uint8), s.astype(np.uint8), v_final])
 result = cv2.cvtColor(hsv_final, cv2.COLOR_HSV2BGR)
-
+cv2.imwrite("gamma_corrected.jpg", result)
 cv2.imshow('Original', img)
 cv2.imshow(f'Gamma corrected (γ={gamma})', result)
 cv2.waitKey(0)
